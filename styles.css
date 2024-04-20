@@ -1,0 +1,487 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 95px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    padding: 0 20px;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 5px;
+    font-size: 32px;
+    top: 20%;
+    left: 25px;
+  }
+  
+  .feature {
+    display: flex;
+    margin-left: auto;
+    transition: transform 0.5s;
+    overflow: hidden;
+  }
+  
+  li {
+    list-style: none;
+    padding: 13px;
+    margin-right: 40px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 15px;
+    transition-property: transform;
+    transition-delay: 0.1s;
+    display: flex;
+    align-items: center;
+  
+  }
+  li i{
+    margin-right: 5px;
+  }
+  li:hover {
+    transform: scale(1.2);
+    color: rgb(220, 105, 63);
+  }
+  .orange {
+    color: rgb(220, 105, 63);
+  }
+  .menu-3 {
+    display: flex;
+    align-items: center;
+}
+
+.menu-3 a {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color */
+}
+
+.menu-3 i {
+    margin-right: 5px; /* Add space between icon and text */
+}
+  .menu-5 {
+    width: 100%;
+    height: 18px;
+    background-color: rgb(220, 105, 63);
+    padding: 15px;
+    text-align: center;
+    
+  }
+  a{
+   text-decoration: none;
+   color: aliceblue;
+  }
+  
+  .sec-1 {
+    margin-top: 4%;
+    margin-right: 0;
+    background-image: url(pollution.jpg);
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+    background-size: cover;
+    background-position: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  .content-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(255, 118, 69, 0.6);
+    border-radius: 10px;
+  }
+  
+  .line1 {
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(8, 5, 4);
+    font-weight: 500;
+  }
+  
+  .line2 {
+    color: aliceblue;
+    font-size: 50px;
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .line3 {
+    padding: 30px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  .appoint-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .button1 {
+    padding: 10px;
+    background-color: rgba(16, 15, 15, 0.8);
+    color: aliceblue;
+    font-weight: 200;
+    font-size: 17px;
+    transition-property: transform;
+    transition-delay: 0.1s;
+    border: none;
+  }
+  
+  .button1:hover {
+    transform: scale(1.1);
+    background-color: rgba(249, 244, 244, 0.5);
+    color: black;
+    font-weight: 500;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  .section-2 {
+    display: grid;
+    grid-template-rows: repeat(1, 1fr);
+  }
+  
+  .service {
+    margin: auto;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .service-img {
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 150px;
+  }
+  
+  .service-1,
+  .service-2,
+  .service-3,
+  .service-4 {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .l1 {
+    font-family: "Quicksand", sans-serif;
+    color: rgb(220, 105, 63);
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .l2 {
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .orderBtn {
+    margin-top: 16px;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(220, 105, 63);
+    border: none;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    color: white; /* Set the text color */
+    transition: color 0.5s; /* Add a transition for the text color */
+    z-index: 1; /* Ensure the button content is in front of the pseudo-element */
+  }
+  
+  .orderBtn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 0) 100%, transparent 50%);
+    transition: left 0.5s;
+    z-index: -1;
+  }
+  
+  .orderBtn:hover::before {
+    left: 0;
+  }
+  .img {
+    width: 430px;
+    height: 250px;
+    
+ 
+  }
+  .img:hover{
+    transform: scale(1.1);
+    transition-delay: 0.1s;
+    transition-duration: 0.5s;
+  
+  }
+  
+  .l3 {
+    padding: 15px;
+    font-size: 20px;
+    color: rgb(220, 105, 63);
+  }
+  .l4 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+  }
+  
+  .sec-3 {
+    display: flex;
+    justify-content: space-evenly; /* Distribute space between flex items */
+    align-items: center;
+    gap: 3rem;
+    background-color: rgb(253, 236, 214);
+    overflow: hidden;
+    width: 90rem;
+    height: 300px;
+    padding: 30px;
+}
+.sec-3>div:first-child{
+  max-width: 700px;
+}
+  .l31 {
+    font-family: "Quicksand", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(220, 105, 63);
+    padding-bottom: 4px;
+  }
+  
+  .l32 {
+    padding: 11px 0;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  
+  .l34 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+  }
+  
+  .more {
+    margin-top: 16px;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(220, 105, 63);
+    border: none;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    color: white; /* Set the text color */
+    transition: color 0.5s; /* Add a transition for the text color */
+    z-index: 1; /* Ensure the button content is in front of the pseudo-element */
+  }
+  
+  .more::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(0, 0, 0) 100%, transparent 50%);
+    transition: left 0.5s;
+    z-index: -1;
+  }
+  
+  .more:hover::before {
+    left: 0;
+  }
+  
+.news-section{
+  padding: 80px;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.news-article {
+  border: 1px solid #e9e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.news-article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.news-article h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.news-article p {
+  font-size: 17px;
+  color: #737070;
+  margin-bottom: 15px;
+}
+
+.news-article a {
+  color:  rgb(220, 105, 63);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.news-article a:hover {
+  text-decoration: underline;
+}
+
+
+  .sec-5 {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(27, 27, 25);
+    overflow: hidden;
+    display: flex;
+    justify-content:space-between;
+    
+  }
+  
+  
+  .opening-hours {
+    width: 350px;
+    font-family: "Playfair Display", serif;
+    font-weight: 300;
+  }
+  
+  .opening-hours h3 {
+    color: #fffbfb;
+    font-weight: 300;
+  }
+  
+  .opening-hours ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .opening-hours li {
+  color: rgb(196, 194, 191);
+  text-align: left;
+  margin-left: 40px;
+  }
+  .headquaters{
+    color: white;
+    width:200px;
+    text-align: left;
+  }
+  
+  .title{
+    margin-left: 10px;
+    text-align:center;
+    margin-top: 42px;
+    color: #fffbfb;
+    font-weight: 400;
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .h1{
+    padding: 15px;
+    font-size: 16px;
+    font-family: "Quicksand", sans-serif;
+    color:  rgb(196, 194, 191);
+  
+  }
+  .hour{
+    margin-left: 80px;
+    text-align:center;
+    margin-top: 42px;
+    color: #fffbfb;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .footer-1{
+    margin-left: 80px;
+  }
+  .logo-1{
+    margin: 20px;
+    padding: 0 10px;
+    margin-top: 70px;
+    color: #fffbfb;
+    font-size: 45px;
+    letter-spacing: 3px;
+  }
+  
+  .icons{
+    color: #aeabab;
+    padding: 10px;
+  }
+  
+  .subscribe{
+    width: 300px;
+    height: auto;
+    margin-right: 80px;
+  }
+  .hour1{
+    text-align:center;
+    margin-top: 42px;
+    color: #fffbfb;
+    font-weight: 400;
+  }
+  .input1{
+    
+    margin-top: 10px;
+    width: 300px;
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+  }
+  .input2{
+    width: 303px;
+    height: 33px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgb(233, 120, 7);
+    cursor: pointer;
+  }
+  .last{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(27, 27, 25);
+  }
+  .line{
+    color: #fffbfb;
+  }
+  .para{
+    color: rgb(233, 120, 7);
+    text-align: center;
+  }

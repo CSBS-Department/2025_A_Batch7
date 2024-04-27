@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="regis.css" />
+</head>
+<body>
+<section class="container">
+
+    <form id="registrationForm" class="form">
+        <div class="input-box">
+            <center>
+                <h3>Registration Form For Alert Message</h3>
+            </center>
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter full name" id="fullName" required />
+        </div>
+
+        <div class="input-box">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email address" id="email" required />
+        </div>
+
+        <div class="input-box">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" id="phoneNumber" required />
+        </div>
+
+        <div class="input-box address">
+            <label>Address</label>
+            <input type="text" placeholder="Enter street address" id="streetAddress" required />
+            <input type="text" placeholder="Enter street address line 2" id="addressLine2" required />
+            <div class="column">
+                <div class="select-box">
+                    <select id="country">
+                        <option hidden>Country</option>
+                        <option>America</option>
+                        <option>Japan</option>
+                        <option>India</option>
+                        <option>Nepal</option>
+                    </select>
+                </div>
+                <input type="text" placeholder="Enter your city" id="city" required />
+            </div>
+            <div class="column">
+                <input type="number" placeholder="Enter postal code" id="postalCode" required />
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form data
+        const fullName = document.getElementById("fullName").value;
+        const email = document.getElementById("email").value;
+        const phoneNumber = document.getElementById("phoneNumber").value;
+        const streetAddress = document.getElementById("streetAddress").value;
+        const addressLine2 = document.getElementById("addressLine2").value;
+        const country = document.getElementById("country").value;
+        const city = document.getElementById("city").value;
+        const postalCode = document.getElementById("postalCode").value;
+
+        // Display alert with form data
+        alert("Registration successful!\n\n" +
+            "Full Name: " + fullName + "\n" +
+            "Email Address: " + email + "\n" +
+            "Phone Number: " + phoneNumber + "\n" +
+            "Street Address: " + streetAddress + "\n" +
+            "Address Line 2: " + addressLine2 + "\n" +
+            "Country: " + country + "\n" +
+            "City: " + city + "\n" +
+            "Postal Code: " + postalCode
+        );
+    });
+</script>
+</body>
+</html>

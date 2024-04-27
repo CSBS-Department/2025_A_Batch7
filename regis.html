@@ -8,6 +8,7 @@
     <!--<title>Registration Form in HTML CSS</title>-->
     <!---Custom CSS File--->
     <link rel="stylesheet" href="regis.css" />
+    <script src="regis.js" defer></script>
 </head>
 <body>
 <section class="container">
@@ -54,6 +55,7 @@
         <button type="submit">Submit</button>
     </form>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 
 <script>
     document.getElementById("registrationForm").addEventListener("submit", function(event) {
@@ -82,5 +84,57 @@
         );
     });
 </script>
+<!-- Add Firebase SDK and initialize Firebase --> 
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"></script>
+<script>
+  // Your Firebase configuration
+  const firebaseConfig = {
+  apiKey: "AIzaSyCmh4WNjtASh7pLmLpResbEuF6omBZagf4",
+  authDomain: "register-form-afa14.firebaseapp.com",
+  databaseURL: "https://register-form-afa14-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "register-form-afa14",
+  storageBucket: "register-form-afa14.appspot.com",
+  messagingSenderId: "909800646674",
+  appId: "1:909800646674:web:85da8da112af61a68b50cb"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a reference to the Firestore database service
+  const db = firebase.firestore();
+
+  // Event listener for form submission
+  document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    // Get form data
+    const formData = {
+      fullName: document.getElementById("fullName").value,
+      email: document.getElementById("email").value,
+      phoneNumber: document.getElementById("phoneNumber").value,
+      streetAddress: document.getElementById("streetAddress").value,
+      addressLine2: document.getElementById("addressLine2").value,
+      country: document.getElementById("country").value,
+      city: document.getElementById("city").value,
+      postalCode: document.getElementById("postalCode").value
+    };
+
+    // Add the form data to Firestore
+    db.collection("registrations").add(formData)
+      .then(function(docRef) {
+        console.log("Document written with ID: ", docRef.id);
+        alert("Registration successful!");
+        // You can redirect to another page here if needed
+        window.location.href = "home.html";
+      })
+      .catch(function(error) {
+        console.error("Error adding document: ", error);
+        alert("An error occurred. Please try again later.");
+      });
+  });
+</script>
+
 </body>
 </html>

@@ -71,7 +71,7 @@
 .menu-3 i {
     margin-right: 5px; /* Add space between icon and text */
 }
-  .menu-5 {
+  /* .menu-5 {
     width: 100%;
     height: 18px;
     background-color: rgb(220, 105, 63);
@@ -79,12 +79,37 @@
     border-radius: 5px;
     text-align: center;
     
-  }
+  } */
+
+  .menu-5 {
+    width: 100%;
+    height: 18px;
+    background-color: rgb(220, 105, 63);
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative; /* Position relative for absolute positioning */
+}
+
+.menu-5 .login-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: none; /* Remove underline from link */
+    color: white; /* Text color */
+    font-weight: 500; /* Text font-weight */
+    font-size: 16px; /* Text font-size */
+}
+
+  
   
   a{
    text-decoration: none;
    color: aliceblue;
   }
+
+  
   
   .sec-1 {
     margin-top: 4%;
@@ -164,29 +189,43 @@
   }
 
   /* alert section */
-  .container {
+  /* .container {
     /* display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background-color: rgba(255, 118, 69, 0.6); */
-    display: flex;
+    /* display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: rgb(253, 236, 214,0.8);
-    justify-content: space-between;
     height: 300px;
     padding: 30px;  
-    margin-top: 100px;  
+    margin-top: 100px; 
+    overflow: hidden; 
+    
+} */ 
+.container {
+  display: flex;
+  justify-content: space-between; /* Distribute space between flex items */
+  align-items: center;
+  background-color: rgb(253, 236, 214);
+  overflow: hidden;
+  height: 320px;
+  padding: 20px;
+  margin-top: 100px;
+}
+.container>div:first-child{
+max-width: 800px;
 }
 
 .left-section {
-    flex: 1;
+    margin-top: 5px;
     margin-left: 100px;
 }
 
 .right-section {
-    flex: 1;
+    
     text-align: center;
 }
 .index_img{
@@ -207,17 +246,20 @@ h1 {
 
 
 .alert-button {
+  display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: rgb(220, 105, 63);;
+    background-color: rgb(220, 105, 63);
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
+    text-decoration: none;
+    margin-top: 30px;
+    
+    
 }
-
 .alert-button:hover {
     
     background-color: rgb(7, 7, 7);
@@ -328,7 +370,6 @@ h1 {
     gap: 3rem;
     background-color: rgb(253, 236, 214);
     overflow: hidden;
- 
     height: 300px;
     padding: 30px;
 }

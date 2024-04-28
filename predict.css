@@ -18,7 +18,7 @@ body {
     justify-content: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.3); /* Reduced opacity for white background */
+    background-color: rgba(255, 255, 255,0.3); /* Reduced opacity for white background */
     padding: 2vw;
 }
 
@@ -32,19 +32,19 @@ body {
 .sub-heading {
     margin: 20px 0;
     font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
 .location-container {
     margin: 40px 0;
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly more transparent white background */
+    background-color: rgba(255, 255, 255, 0.5); /* Slightly more transparent white background */
     padding: 20px;
     border-radius: 10px;
 }
 
 .loc-input {
-    border: 3px solid #269fe6;
-    font-size: 1rem;
+    border: 3px solid rgb(244, 63, 47);
+    font-size: 1.2rem;
     padding: 8px;
     border-radius: 6px;
     margin: 10px;
@@ -52,12 +52,12 @@ body {
 }
 
 .loc-input:invalid {
-    border: 3px solid #d34545;
+    border: 3px solid #f53a3a;
 }
 
 .search-btn {
     padding: 10px 14px;
-    background-color: #269fe6;
+    background-color: #f4403d ;
     border: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
@@ -69,12 +69,15 @@ body {
 }
 
 .air-quality, .arr, .air-quality-status {
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 700;
+    color: red;
 }
 
 .component-names {
     display: inline-block;
+    font-size: 23px;
+
 }
 
 .component-container div {
@@ -82,8 +85,10 @@ body {
 }
 
 .component-val {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     margin-left: 20px;
+    color: red;
+    font-weight: 500;
 }
 
 footer {

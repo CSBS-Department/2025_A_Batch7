@@ -57,7 +57,15 @@
   .orange {
     color: rgb(220, 105, 63);
   }
-  .menu-3 {
+  .menu-1 i{
+    margin-right: 5px;
+  }
+  .menu-1 a{
+    display: flex;
+    
+  }
+
+  .menu-3,.menu-1 {
     display: flex;
     align-items: center;
 }
@@ -217,7 +225,9 @@
   height: 320px;
   padding: 20px;
   margin-top: 100px;
-  margin: 0;
+  padding-left: 100px;
+  padding-right: 100px;
+  
 }
 .container>div:first-child{
 max-width: 800px;
@@ -278,7 +288,6 @@ h1 {
   }
   
   .service {
-    margin: auto;
     padding: 70px;
     display: flex;
     flex-direction: column;
@@ -287,7 +296,6 @@ h1 {
   }
   
   .service-img {
-    padding: 50px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 150px;

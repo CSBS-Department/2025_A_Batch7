@@ -61,3 +61,50 @@ const firebaseConfig = {
   const getElementVal = (id) => {
     return document.getElementById(id).value;
   };
+
+
+const admin = require('firebase-admin');
+const twilio = require('twilio');
+
+// Initialize Firebase Admin SDK
+const serviceAccount = require('./path/to/serviceAccountKey.json'); // Path to your service account key file
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://register-form-afa14-default-rtdb.asia-southeast1.firebasedatabase.app'
+});
+
+// Initialize Twilio client
+const accountSid = 'AC5a789deb0195b58f38b669a8479c0281';
+const authToken = 'fed4fad590e6e9f604800fdced58e3f9';
+const twilioClient = twilio(accountSid, authToken);
+
+// Function to send SMS
+function sendSMS(phoneNumber, message) {
+  twilioClient.messages.create({
+    body: message,
+    from: '+12513206057',
+    to: phoneNumber
+  })
+  .then(message => console.log('Message sent successfully:', message.sid))
+  .catch(error => console.error('Error sending message:', error));
+}
+
+// Function to retrieve user's phone number from Firestore and send SMS
+function processRegistration(userId) {
+  admin.firestore().collection('users').doc(userId).get()
+    .then(doc => {
+      if (doc.exists) {
+        const userData = doc.data();
+        const phoneNumber = userData.phoneNumber;
+        const message = 'Hello! Thank you for registering.';
+        sendSMS(phoneNumber, message);
+      } else {
+        console.error('User document not found');
+      }
+    })
+    .catch(error => console.error('Error retrieving user data:', error));
+}
+
+// Example usage
+const userId = 'user_id_of_registered_user';
+processRegistration(userId);

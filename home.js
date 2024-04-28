@@ -1,33 +1,31 @@
-// Function to fetch and display news articles
+// fetching news
 function fetchNews() {
-    fetch('https://newsapi.org/v2/everything?q=pollution&apiKey=65b89511c45b4b28bd936b70a30f4300')
-        .then(response => response.json())
-        .then(data => {
-            // Get the top three or four news articles
-            const topNews = data.articles.slice(0, 4);
-
-            // Create HTML elements for each news article
-            const newsGrid = document.getElementById('newsGrid');
-            newsGrid.innerHTML = ''; // Clear previous articles
-            topNews.forEach(article => {
-                const articleDiv = document.createElement('div');
-                articleDiv.classList.add('news-article');
-                articleDiv.innerHTML = `
-                    <h2>${article.title}</h2>
-                    <p>${article.description}</p>
-                    <a href="${article.url}" target="_blank">Read More</a>
-                `;
-                newsGrid.appendChild(articleDiv);
-            });
-        })
-        .catch(error => console.error('Error fetching news:', error));
-}
-
-// Initial fetch
-fetchNews();
-
-// Update news every 30 minutes
-setInterval(fetchNews, 30 * 60 * 1000); // 30 minutes in milliseconds
+    fetch('https://newsapi.org/v2/top-headlines?country=in&category=health&apiKey=65b89511c45b4b28bd936b70a30f4300')
+         .then(response => response.json())
+      .then(data => {
+        const topNews = data.articles.slice(0, 4);
+        const newsGrid = document.getElementById('newsGrid');
+        newsGrid.innerHTML = ''; // Clear previous articles
+        topNews.forEach(article => {
+          const articleDiv = document.createElement('div');
+          articleDiv.classList.add('news-article');
+          articleDiv.innerHTML = `
+            <h2>${article.title}</h2>
+            <p>${article.description}</p>
+            <a href="${article.url}" target="_blank">Read More</a>
+          `;
+          newsGrid.appendChild(articleDiv);
+        });
+      })
+      .catch(error => console.error('Error fetching news:', error));
+  }
+  
+  // Initial fetch
+  fetchNews();
+  
+  // Update news every 30 minutes
+  setInterval(fetchNews, 30 * 60 * 1000); // 30 minutes in milliseconds
+  
 
 
 // Initialize Firebase app and authentication
@@ -68,3 +66,4 @@ document.getElementById('logout').addEventListener('click', function() {
     });
 });
 
+// >>>>>>> 357f9f3c536533a37e41f12bf9e12755960bf1ef

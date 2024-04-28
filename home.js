@@ -28,3 +28,43 @@ fetchNews();
 
 // Update news every 30 minutes
 setInterval(fetchNews, 30 * 60 * 1000); // 30 minutes in milliseconds
+
+
+// Initialize Firebase app and authentication
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+
+// Function to check if user is logged in
+function checkLoginStatus() {
+    const user = auth.currentUser;
+    if (user) {
+        // User is logged in
+        document.querySelector('.login-link').style.display = 'none'; // Hide login link
+        document.getElementById('user-info').style.display = 'block'; // Show user info box
+        document.getElementById('user-email').textContent = 'Logged in as: ' + user.email;
+    } else {
+        // User is not logged in
+        document.querySelector('.login-link').style.display = 'block'; // Show login link
+        document.getElementById('user-info').style.display = 'none'; // Hide user info box
+    }
+}
+
+// Check login status when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    checkLoginStatus();
+});
+
+// Logout function
+document.getElementById('logout').addEventListener('click', function() {
+    signOut(auth).then(() => {
+        // Sign-out successful
+        console.log('Sign-out successful.');
+        alert('Logout successful.');
+        window.location.href = 'login.html'; // Redirect to login page after logout
+    }).catch((error) => {
+        // An error happened
+        console.log('An error occurred during logout:', error);
+        alert('An error occurred during logout. Please try again.');
+    });
+});
+
